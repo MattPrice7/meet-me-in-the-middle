@@ -1,0 +1,59 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+
+
+table {
+    background-color: transparent;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+table th,
+table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: rgb(179, 208, 255, 0.3)
+}
+
+
+
+button.remove-address {
+    margin-left: 2px; /* Adds spacing between input and button */
+}
+
+.activity-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow tables to wrap when the screen is smaller */
+    gap: 20px; /* Add spacing between tables */
+    justify-content: center; /* Center align the tables when wrapping */
+}
+
+.activity-table {
+    flex: 1 1 300px; /* Allow tables to grow/shrink, with a minimum width of 300px */
+    max-width: 300px; /* Prevent tables from becoming too wide */
+    text-align: center; /* Center align text and buttons */
+    padding: 10px;
+    border: 1px solid #ddd; /* Optional: Add a border to distinguish tables */
+    border-radius: 8px; /* Rounded corners for styling */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-btn {
+    display: block; /* Force buttons to take up the full width of their container */
+    width: 100%;
+    margin: 10px 0; /* Add spacing between buttons */
+    background-color: #537fbe;
+}
+

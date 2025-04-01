@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Midpoint
+{% endblock %}
+
+{% block main %}
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBepnl1d3i5Whh4lNlQWMgxFevEHEuAv4c"></script>
+
+        <script>
+            function initMap() {
+                // Midpoint coordinates from the server
+                const midpoint = { lat: {{ midpoint.lat }}, lng: {{ midpoint.lng }} };
+
+                // Create a map centered on the midpoint
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 12,
+                    center: midpoint
+                });
+
+                // Add a marker at the midpoint
+                const marker = new google.maps.Marker({
+                    position: midpoint,
+                    map: map,
+                    title: "Midpoint"
+                });
+            }
+        </script>
+    </head>
+    <body onload="initMap()">
+        <h1>Midpoint</h1>
+        <p>The midpoint of the provided addresses is:</p>
+        <p><strong>Coordinates:</strong> {{ midpoint.lat }}, {{ midpoint.lng }}</p>
+        <p><strong>Nearest Major Location: </strong><a href="/activities?major_location={{major_location}}" class="btn-symbol">{{ major_location }}</a></p>
+
+        <!-- Map container -->
+        <div id="map" style="height: 500px; width: 100%;"></div>
+
+{% endblock %}

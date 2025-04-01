@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Meet Me in the Middle
+{% endblock %}
+
+{% block main %}
+
+    <form action="/" method="post">
+        <div id="address-container">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="address1" placeholder="Address 1" type="text" required>
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="address2" placeholder="Address 2" type="text" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <a href="#" id="add-address" class="text-decoration-underline">+ Add Address</a>
+        </div>
+        <button class="btn btn-primary" type="submit">Locate Midway Point</button>
+    </form>
+
+    <script>
+        let addressCounter = 2;
+
+        document.getElementById('add-address').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+
+            addressCounter++;
+            const addressContainer = document.getElementById('address-container');
+
+            const newInputDiv = document.createElement('div');
+            newInputDiv.className = 'mb-3 position-relative'; // Parent container for relative alignment
+            newInputDiv.innerHTML = `
+                <div class="position-relative" style="display: inline-block; text-align: center;">
+                    <input autocomplete="off" class="form-control mx-auto w-auto"
+                        name="address${addressCounter}" placeholder="Address ${addressCounter}"
+                        type="text" style="display: inline-block;">
+                    <button type="button" class="btn btn-danger btn-sm remove-address"
+                        style="position: absolute; top: 50%; transform: translateY(-50%); right: -40px;">-</button>
+                </div>
+            `;
+            addressContainer.appendChild(newInputDiv);
+
+
+            newInputDiv.querySelector('.remove-address').addEventListener('click', function () {
+                newInputDiv.remove();
+            addressCounter -= 1;
+            });
+        });
+    </script>
+
+{% endblock %}
+
+
+const newInputDiv = document.createElement('div');
+newInputDiv.className = 'mb-3 position-relative'; // Parent container for relative alignment
+newInputDiv.innerHTML = `
+    <div class="position-relative" style="display: inline-block; text-align: center;">
+        <input autocomplete="off" class="form-control mx-auto w-auto"
+            name="address${addressCounter}" placeholder="Address ${addressCounter}"
+            type="text" style="display: inline-block;">
+        <button type="button" class="btn btn-danger btn-sm remove-address"
+            style="position: absolute; top: 50%; transform: translateY(-50%); right: -40px;">-</button>
+    </div>
+`;
+addressContainer.appendChild(newInputDiv);

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Activities near {{ major_location }}
+{% endblock %}
+
+{% block main %}
+    <h1>Activities Near {{ major_location }}</h1>
+    <div class= "container activity-container">
+        <div class="activity-table">
+            <h2>Stay</h2>
+            <a href="https://www.google.com/search?q=Stay%20near%20{{ major_location| replace(' ', '%20') }}" target="_blank" class="btn btn-primary search-btn">Stay In {{ major_location }}</a>
+            <a href="https://www.google.com/search?q=Hotels%20near%20{{ major_location| replace(' ', '%20') }}" target="_blank" class="btn btn-primary search-btn">Hotels</a>
+            <a href="https://www.airbnb.com/s/{{ major_location | replace(' ', '%20') }}/homes" target="_blank" class="btn btn-primary search-btn">Air BnB</a>
+            <a href="https://www.google.com/search?q=Camping%20near%20{{ major_location| replace(' ', '%20') }}" target="_blank" class="btn btn-primary search-btn">Camping</a>
+        </div>
+
+        <div class="activity-table">
+            <h2>Food</h2>
+            <a href="https://www.google.com/search?q=Restaurants%20near%20{{ major_location| replace(' ', '%20') }}" target="_blank" class="btn btn-primary search-btn">Restaurants</a>
+            <a href="https://www.google.com/search?q=Breakfast%20near%20{{ major_location| replace(' ', '%20') }}" target="_blank" class="btn btn-primary search-btn">Breakfast</a>
+            <a href="https://www.google.com/search?q=Lunch%20near%20{{ major_location| replace(' ', '%20') }}" target="_blank" class="btn btn-primary search-btn">Lunch</a>
+            <a href="https://www.google.com/search?q=Dinner%20near%20{{ major_location| replace(' ', '%20') }}" target="_blank" class="btn btn-primary search-btn">Dinner</a>
+        </div>
+
+        <div class="activity-table">
+            <h2>Activities</h2>
+            <a href="https://www.google.com/search?q=Date%20ideas%20near%20{{ major_location| replace(' ', '%20') }}" target="_blank" class="btn btn-primary search-btn">Date Ideas</a>
+            <a href="https://www.google.com/search?q=Activities%20to%20do%20near%20{{ major_location| replace(' ', '%20') }}" target="_blank" class="btn btn-primary search-btn">Activities</a>
+            <a href="https://www.google.com/search?q=Hiking%20near%20{{ major_location| replace(' ', '%20') }}" target="_blank" class="btn btn-primary search-btn">Hiking</a>
+            <a href="https://www.google.com/search?q=Shopping%20near%20{{ major_location| replace(' ', '%20') }}" target="_blank" class="btn btn-primary search-btn">Shopping</a>
+        </div>
+    </div>
+
+    <!--<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the nearest location from the hidden span
+            const nearestLocation = document.getElementById("nearest-location").dataset.location;
+
+            // Select all buttons with the class 'search-btn'
+            const buttons = document.querySelectorAll(".search-btn");
+
+            // Add a click event listener to each button
+            buttons.forEach(button => {
+                button.addEventListener("click", function () {
+                    // Get the search query from the button's data-query attribute
+                    const query = button.dataset.query;
+
+                    // Redirect to Google search
+                    const searchUrl = `https://www.google.com/search?q=${query} near ${nearestLocation}`;
+                    window.open(searchUrl, "_blank");
+                });
+            });
+        });
+    </script> -->
+{% endblock %}
