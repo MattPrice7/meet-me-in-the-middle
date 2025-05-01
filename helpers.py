@@ -4,7 +4,7 @@ from flask import redirect, render_template, session
 from functools import wraps
 
 def geolocate(address):
-    url = f"https://maps.googleapis.com/maps/api/geocode/json?address={address.upper()}&key=AIzaSyBepnl1d3i5Whh4lNlQWMgxFevEHEuAv4c"
+    url = f"https://maps.googleapis.com/maps/api/geocode/json?address={address.upper()}&key=AIzaS**********************EuAv4c"
     try:
         response = requests.get(url)
         response.raise_for_status()  # Raise an error for HTTP error responses
@@ -61,7 +61,7 @@ def reverse_geocode(lat, lng):
 
 
 def nearest_major_location(lat, lng):
-    url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={lat},{lng}&rankby=distance&type=locality&key=AIzaSyBepnl1d3i5Whh4lNlQWMgxFevEHEuAv4c"
+    url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={lat},{lng}&rankby=distance&type=locality&key=AIzaSyB****************EuAv4c"
     try:
         response = requests.get(url)
         response.raise_for_status()
