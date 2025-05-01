@@ -27,7 +27,7 @@ def geolocate(address):
 
 
 def reverse_geocode(lat, lng):
-    url = f"https://maps.googleapis.com/maps/api/geocode/json?latlng={lat},{lng}&key=AIzaSyBepnl1d3i5Whh4lNlQWMgxFevEHEuAv4c"
+    url = f"https://maps.googleapis.com/maps/api/geocode/json?latlng={lat},{lng}&key=AIzaSyB*********vEHEuAv4c"
     try:
         response = requests.get(url)
         response.raise_for_status()
